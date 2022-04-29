@@ -7,8 +7,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-
-	tored25519 "github.com/cretz/bine/torutil/ed25519"
 )
 
 var (
@@ -49,8 +47,7 @@ func entrypoint() (err error) {
 		return
 	}
 
-	secretKeyRaw := data[32:] // Start from 32nd
-	secretKey := tored25519.PrivateKey(secretKeyRaw)
+	secretKey := data[32:] // Start from 32nd
 	encoded := base64.StdEncoding.EncodeToString(secretKey)
 	fmt.Printf("ED25519-V3:%s\n", encoded)
 	return
