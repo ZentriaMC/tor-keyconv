@@ -12,6 +12,11 @@ $ cat convkey
 ED25519-V3:...
 ```
 
+### Help, lnd does not launch!
+
+Ensure that the keyfile does not have newline character. Use `od -a ./convkey` to check (`nl` = newline)
+and `head -c -1 convkey > convkey_nonl` to fix.
+
 ## License
 
 MIT
