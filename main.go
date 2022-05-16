@@ -49,6 +49,6 @@ func entrypoint() (err error) {
 
 	secretKey := data[32:] // Start from 32nd
 	encoded := base64.StdEncoding.EncodeToString(secretKey)
-	fmt.Printf("ED25519-V3:%s\n", encoded)
+	fmt.Printf("ED25519-V3:%s", encoded)
 	return
 }
